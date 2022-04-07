@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+
+    frontend:
+      build: ../../material-applications/example-frontend/
+      ports:
+        - 5000:5000
+      container_name: frontend
+
+    backend:
+      environment:
+        - REDIS_HOST=redis
+      build: ../../material-applications/example-backend/
+      ports:
+        - 8080:8080
+      container_name: backend
+
+    redis:
+      image: redis:latest
+      container_name: redis
