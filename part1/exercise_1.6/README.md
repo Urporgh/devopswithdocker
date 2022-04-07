@@ -1,4 +1,5 @@
-docker run -it devopsdockeruh/pull_exercise
+**Command:**
+```docker run -it devopsdockeruh/pull_exercise```
 
 I searched hub.docker.com for devopsdockeruh/pull_exercise and read the doc.
 
