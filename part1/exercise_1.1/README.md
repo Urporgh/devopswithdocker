@@ -1,4 +1,3 @@
-```
 Script started on Wed Mar 30 20:41:05 2022
 command: docker ps -a
 CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
