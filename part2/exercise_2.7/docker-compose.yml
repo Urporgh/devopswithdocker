@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+
+    frontend:
+      build: ../../material-applications/ml-kurkkumopo-frontend/
+      ports:
+        - 3000:3000
+      container_name: km-frontend
+
+    backend:
+      build: ../../material-applications/ml-kurkkumopo-backend/
+      ports:
+        - 5000:5000
+      volumes:
+        - model:/src/model
+      container_name: km-backend
+      depends_on:
+        - training
+
+    training:
+      build: ../../material-applications/ml-kurkkumopo-training
+      volumes:
+        - model:/src/model
+        - imgs:/src/imgs
+        - data:/src/data
+      container_name: km-training
+
+volumes:
+  model:
+  imgs:
+  data:
