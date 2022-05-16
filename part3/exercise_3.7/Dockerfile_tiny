@@ -7,17 +7,9 @@ WORKDIR /usr/src/app
 # Copy the website.sh file
 COPY website.sh .
 
-# Install curl
-# RUN apt-get update && \
-#     apt-get install curl -y && \
-#     rm -rf /var/lib/apt/lists/* && \
-#     useradd -m appuser
-
 RUN adduser -D appuser
 
 USER appuser
 
 # Run the script
 CMD ./website.sh
-# CMD ls -l
-# ENTRYPOINT ["/website.sh"]
